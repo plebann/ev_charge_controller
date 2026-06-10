@@ -1,3 +1,15 @@
+<!--
+Sync Impact Report
+Version change: 1.0.0 → 1.0.0
+Modified principles: none
+Added sections: none
+Removed sections: none
+Templates requiring updates: ✅ .specify/templates/plan-template.md (already aligned)
+Templates requiring updates: ✅ .specify/templates/spec-template.md (already aligned)
+Templates requiring updates: ✅ .specify/templates/tasks-template.md (already aligned)
+Follow-up TODOs: none
+-->
+
 # Constitution
 
 ## Purpose
@@ -258,6 +270,31 @@ The default project priority order is:
 7. EV charging time optimization
 
 Priorities 4 through 7 MAY change by charging mode, but priorities 1 through 3 MUST remain fixed.
+
+## Governance
+
+This constitution supersedes any conflicting project guidance, templates, or informal practice.
+
+Amendments MUST be documented with:
+
+- the proposed change
+- the rationale for the change
+- the expected impact on implementation and review practice
+- a semantic version bump
+
+Versioning policy:
+
+- MAJOR for backward-incompatible governance or principle removals/redefinitions
+- MINOR for new principles or materially expanded guidance
+- PATCH for clarifications, wording fixes, and non-semantic refinements
+
+Compliance expectations:
+
+- feature specs, plans, tasks, and checklists MUST be checked against this constitution
+- implementation decisions that conflict with the constitution MUST be justified explicitly
+- reviews SHOULD verify that safety, local-only runtime, determinism, and explainability remain intact
+
+**Version**: 1.0.0 | **Ratified**: 2026-06-10 | **Last Amended**: 2026-06-10
 
 ---
 
