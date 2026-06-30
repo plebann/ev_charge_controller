@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Required entities",
+        "description": "Select required Home Assistant entities for EV charging control."
+      },
+      "optional": {
+        "title": "Optional entities",
+        "description": "Configure optional OBC and future-price mapping entities."
+      },
+      "battery": {
+        "title": "Battery protection",
+        "description": "Configure tiered battery discharge protection."
+      }
+    },
+    "error": {
+      "must_be_positive": "The grid power limit must be greater than zero.",
+      "required_with_obc": "Provide the OBC current sensor when the OBC control entity is configured.",
+      "forecast_keys_required": "When a future-price attribute is configured, both forecast keys are required.",
+      "must_differ_from_sensors": "A control entity must not reuse a sensor entity."
+    }
+  },
+  "options": {
+    "step": {
+      "entity_mapping": {
+        "title": "Entity mapping",
+        "description": "Review the required entity mapping and the site power limit."
+      },
+      "optional_entities": {
+        "title": "Optional entities",
+        "description": "Configure optional OBC control and future-price attributes."
+      },
+      "battery": {
+        "title": "Battery protection",
+        "description": "Adjust battery-protection tiers and fast-mode discharge behavior."
+      },
+      "stop_conditions": {
+        "title": "Stop conditions by mode",
+        "description": "Set per-mode stop sub-thresholds and hysteresis."
+      },
+      "price_thresholds": {
+        "title": "Price thresholds by mode",
+        "description": "Set per-mode buy and sell price thresholds."
+      }
+    }
+  }
+}

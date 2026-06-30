@@ -1,0 +1,13 @@
+{
+  "domain": "ev_charge_controller",
+  "name": "EV Charge Controller",
+  "version": "0.1.0",
+  "documentation": "https://github.com/plebann/ev_charge_controller",
+  "issue_tracker": "https://github.com/plebann/ev_charge_controller/issues",
+  "config_flow": true,
+  "iot_class": "local_polling",
+  "integration_type": "hub",
+  "loggers": ["custom_components.ev_charge_controller"],
+  "requirements": [],
+  "quality_scale": "silver"
+}
