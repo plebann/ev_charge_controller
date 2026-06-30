@@ -138,10 +138,12 @@ class EVChargeCoordinator(DataUpdateCoordinator[ControlDecision | None]):
                 ChargingMode(self.active_mode),
                 override_detected,
             )
-            if decision.mode != ChargingMode.MANUAL and (
-                decision.target_evse_current_a is not None or decision.target_obc_current_a is not None
-            ):
-                await apply_decision(self.hass, self.config, decision)
+if (
+    snapshot.ev_connected is True
+    and decision.mode != ChargingMode.MANUAL
+    and (decision.target_evse_current_a is not None or decision.target_obc_current_a is not None)
+):
+    await apply_decision(self.hass, self.config, decision)
             if decision.target_evse_current_a is not None:
                 self.last_commanded_evse_a = decision.target_evse_current_a
             self.last_commanded_obc_a = decision.target_obc_current_a
