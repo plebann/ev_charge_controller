@@ -184,14 +184,16 @@ class EVChargeControllerConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     def __init__(self) -> None:
         self._data: dict[str, Any] = {}
 
-    async def async_step_user(self, user_input: Mapping[str, Any] | None = None):
-        errors: dict[str, str] = {}
-        if user_input is not None:
-            self._data.update(user_input)
-            errors = _validate_common(self._data)
-            if not errors:
-                return await self.async_step_optional()
-        return self.async_show_form(step_id="user", data_schema=_build_entity_mapping_schema(self._data), errors=errors)
+async def async_step_user(self, user_input: Mapping[str, Any] | None = None):
+    await self.async_set_unique_id(DOMAIN)
+    self._abort_if_unique_id_configured()
+    errors: dict[str, str] = {}
+    if user_input is not None:
+        self._data.update(user_input)
+        errors = _validate_common(self._data)
+        if not errors:
+            return await self.async_step_optional()
+    return self.async_show_form(step_id="user", data_schema=_build_entity_mapping_schema(self._data), errors=errors)
 
     async def async_step_optional(self, user_input: Mapping[str, Any] | None = None):
         errors: dict[str, str] = {}
